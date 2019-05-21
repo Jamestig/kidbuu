@@ -1,0 +1,177 @@
+/*
+ Theme Name:   Kid Buu
+ Theme URI:    https://buuyoga.com
+ Description:  Twenty Nineteen Child Theme
+ Author:       James
+ Template:     twentynineteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  kidbuu
+*/
+
+.site-header.featured-image:after {
+	background: none!important;
+
+}
+
+.main-navigation {
+	border-top: 2px solid black;
+	padding-top: 10px;
+}
+
+.main-navigation .sub-menu {
+	background-color: transparent;
+}
+
+.main-navigation .sub-menu li a:hover {
+	background-color: transparent;
+	color: grey;
+}
+
+.site-header.featured-image .site-branding {
+	text-align: center;
+}
+
+.site-branding {
+	text-align: center;
+}
+
+.site-branding * {
+	color: black !important;
+	text-shadow: none !important;
+}
+
+.site-logo {
+	position: relative;
+	right: 0;
+	top: 0;
+	padding: 10px;
+}
+
+.custom-logo-link {
+	margin: 0 auto;
+}
+
+.entry-title {
+	text-align: center;
+}
+
+.entry-title::before {
+	display: none!important;
+}
+
+.blog .entry-title,
+.single .entry-title {
+	text-align: left;
+}
+
+/* Modifiers */
+
+@media only screen and (min-width: 768px) {
+	.text--narrow {
+		padding-left: 30%!important;
+		padding-right: 30%!important;
+	}
+}
+
+.hover--lighten:hover::before {
+	transition: opacity .3s ease-in-out;
+	opacity: .2;
+	color: white;
+}
+
+.remove--underline a {
+	text-decoration: none!important;
+}
+
+.textbox--left .wp-block-media-text__content {
+	padding-right: 0;
+}
+
+.textbox--right .wp-block-media-text__content {
+	padding-left: 0;
+}
+
+.button--blue {
+	
+}
+.button--green {
+
+}
+.button--grey {
+
+}
+.button--purple {
+
+}
+.text--blue {
+	
+}
+.text--green {
+
+}
+.text--grey {
+
+}
+.text--purple {
+
+}
+.background--blue {
+	
+}
+.background--green {
+
+}
+.background--grey {
+
+}
+.background--purple {
+	background-color: purple;
+}
+
+/* Testimonials */
+
+.post-type-archive-testimonial .site-main {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.post-type-archive-testimonial .entry {
+	margin-top: 0;
+}
+
+
+.testimonial {
+	flex-basis: 33%;
+}
+
+.testimonial .post-thumbnail img {
+	border-radius: 50%;
+}
+
+/* Blog */
+
+.blog .post {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.blog .post .post-thumbnail {
+	margin-right: 0;
+}
+
+/*
+.site-footer {
+	background-image: url("http://localhost/wp_buu/wp-content/uploads/2019/05/buu-tree-meditation-bali.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.site-footer h2,
+.site-footer>ul>li>a {
+	color: white;
+}
+*/
