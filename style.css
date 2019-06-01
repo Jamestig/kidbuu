@@ -11,14 +11,42 @@
  Text Domain:  kidbuu
 */
 
-.site-header.featured-image:after {
-	background: none!important;
-
+/* Variables */
+:root {
+	--theme-darkblue: #2d448c;
+	--theme-lightblue: #99fff0;
+	--theme-aqua: #4ad8b6;
+	--theme-darkaqua: #29ccad;
+	--theme-darkaqua2: #25bfa1;
+	--theme-purple: #854ba0;
 }
 
+/* Fonts */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
+	font-family: 'Prata', serif !important;
+}
+
+/* Classes */
+
 .main-navigation {
-	border-top: 2px solid black;
-	padding-top: 10px;
+	margin-top: 0;
+}
+
+.main-navigation .main-menu>li>a {
+	font-weight: 500;
+	margin-right: 0;
+	white-space: nowrap;
+	font-size: 20px;
+	color: black !important;
 }
 
 .main-navigation .sub-menu {
@@ -27,19 +55,51 @@
 
 .main-navigation .sub-menu li a:hover {
 	background-color: transparent;
-	color: grey;
+	color: var(--theme-purple);
+}
+
+.site-header {
+	padding: 0;
 }
 
 .site-header.featured-image .site-branding {
 	text-align: center;
 }
 
+.site-header.featured-image::after {
+	background: none;
+}
+
+.site-header .sub-menu {
+	background-color: white;
+	text-align: left;
+}
+
+.site-header .sub-menu a {
+	color: black !important;
+	background-color: white;
+	font-size: 20px;
+	text-align: left;
+	font-weight: normal;
+}
+
+.site-header .sub-menu a:hover {
+	color: var(--theme-purple) !important;
+}
+
 .site-branding {
 	text-align: center;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	background-color: white;
+	border-bottom: 2px solid var(--theme-darkblue);
+	padding-bottom: 10px;
 }
 
 .site-branding * {
-	color: black !important;
 	text-shadow: none !important;
 }
 
@@ -47,19 +107,34 @@
 	position: relative;
 	right: 0;
 	top: 0;
-	padding: 10px;
+	margin-bottom: 0;
+}
+
+.site-title {
+	margin-top: -10px !important;
+}
+
+.site-title a {
+	color: var(--theme-darkblue) !important;
+	font-weight: bold;
+	font-size: 1.1em;
 }
 
 .custom-logo-link {
-	margin: 0 auto;
+	margin: 0 auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	height: auto !important;
+	background: none !important;
 }
 
 .entry-title {
 	text-align: center;
+	text-shadow: 0px 0px 5px var(--theme-darkblue);
 }
 
 .entry-title::before {
-	display: none!important;
+	display: none !important;
 }
 
 .blog .entry-title,
@@ -67,13 +142,90 @@
 	text-align: left;
 }
 
+.home .site-header {
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-left-side-navigation-container {
+		text-align: left;
+	}
+	.menu-right-side-navigation-container {
+		text-align: right;
+	}
+	.main-navigation .main-menu>li {
+		display: block;
+	}
+	.main-navigation .main-menu>li>a {
+		font-size: 16px;
+	}
+	.social-navigation {
+		position: absolute;
+		bottom: -40px;
+	}
+}
+
+/* Social Menu */
+
+.social-navigation {
+	margin-top: 0;
+	position: absolute;
+	right: 0;
+	top: 20px;
+}
+
+.site-header.featured-image .social-navigation a:hover {
+	color: var(--theme-purple);
+}
+
+@media only screen and (min-width: 768px) {
+	.site-title a {
+		font-size: 1.6em;
+	}
+
+	.site-logo .custom-logo-link {
+		width: 200px;
+		height: 200px;
+	}
+
+	.site-header.featured-image {
+		min-height: 90vh;
+	}
+
+	.site-header .social-links-menu .menu-item {
+		margin-right: 1vw;
+	}
+
+	.site-header.featured-image .social-navigation a {
+		color: var(--theme-darkblue);
+	}
+}
+
 /* Modifiers */
 
 @media only screen and (min-width: 768px) {
 	.text--narrow {
-		padding-left: 30%!important;
-		padding-right: 30%!important;
+		padding-left: 20% !important;
+		padding-right: 20% !important;
 	}
+}
+
+.margin-top-remove {
+	margin-top: 0 !important;
+}
+
+.margin-bottom-remove {
+	margin-bottom: 0 !important;
+}
+
+.vertical--padding {
+	padding-top: 10vh !important;
+	padding-bottom: 10vh !important;
+}
+
+.extra--padding {
+	padding-top: 20vh !important;
+	padding-bottom: 20vh !important;
 }
 
 .hover--lighten:hover::before {
@@ -83,7 +235,8 @@
 }
 
 .remove--underline a {
-	text-decoration: none!important;
+	text-decoration: none !important;
+	color: white !important;
 }
 
 .textbox--left .wp-block-media-text__content {
@@ -94,42 +247,38 @@
 	padding-left: 0;
 }
 
-.button--blue {
-	
-}
-.button--green {
+@media screen and (min-width: 700px) {
+	.red-dot-after::after {
+		content: '✡';
+		color: var(--theme-purple);
+		padding-left: 5px;
+		vertical-align: middle;
+	}
 
+	.green-dot-after::after {
+		content: '✡';
+		color: var(--theme-darkblue);
+		padding-left: 5px;
+		vertical-align: middle;
+	}
 }
-.button--grey {
 
-}
-.button--purple {
+@media screen and (min-width: 960px) {
+	.red-dot-after-2::after {
+		content: '✡';
+		color: var(--theme-purple);
+		padding-left: 5px;
+		vertical-align: middle;
+	}
 
+	.green-dot-after-2::after {
+		content: '✡';
+		color: var(--theme-darkblue);
+		padding-left: 5px;
+		vertical-align: middle;
+	}
 }
-.text--blue {
-	
-}
-.text--green {
 
-}
-.text--grey {
-
-}
-.text--purple {
-
-}
-.background--blue {
-	
-}
-.background--green {
-
-}
-.background--grey {
-
-}
-.background--purple {
-	background-color: purple;
-}
 
 /* Testimonials */
 
@@ -161,17 +310,3 @@
 .blog .post .post-thumbnail {
 	margin-right: 0;
 }
-
-/*
-.site-footer {
-	background-image: url("http://localhost/wp_buu/wp-content/uploads/2019/05/buu-tree-meditation-bali.jpg");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.site-footer h2,
-.site-footer>ul>li>a {
-	color: white;
-}
-*/
